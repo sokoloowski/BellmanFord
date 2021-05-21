@@ -13,7 +13,7 @@ def BellmanFord(vertices: list, edges: list, source: int) -> Tuple[list, list]:
     distance = [
         inf for n in vertices
     ]  # Initialize the distance to all vertices to infinity
-    predecessor = [0 for n in vertices]  # And having a null predecessor
+    predecessor = [None for n in vertices]  # And having a null predecessor
 
     distance[source] = 0  # The distance from the source to itself is, of course, zero
 
