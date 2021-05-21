@@ -4,10 +4,14 @@ from typing import Tuple
 
 def BellmanFord(vertices: list, edges: list, source: int) -> Tuple[list, list]:
 
-    # This implementation takes in a graph, represented as
-    # lists of vertices (represented as integers [0...n-1]) and edges,
-    # and fills two arrays (distance and predecessor) holding
-    # the shortest path from the source to each vertex
+    """
+    This implementation takes in a graph, represented as
+    lists of vertices (represented as integers [0...n-1]) and edges,
+    and fills two arrays (distance and predecessor) holding
+    the shortest path from the source to each vertex
+
+    Returns `Tuple` with `distance: list` and `predecessor: list`
+    """
 
     # Step 1: initialize graph
     distance = [
