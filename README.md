@@ -7,13 +7,20 @@ This is a part of the project for Graphs Theory.
 
 ## Input
 
-Script reads data from path specified as command line argument. Any text file will be accepted, but only specific JSON format will be interpreted correctly. Correct input data is a list of three lists:
+Script reads data from path specified as command line argument. Any text file will be accepted, but only specific JSON format will be interpreted correctly. Correct input data is a list of edge with specified weight. Additionaly, last element of the list must contain begin and end of route:
 
-- list of `n` vertices (should be integers from `0` to `n-1`),
-- list of edges (in format `start, end, weight`),
-- list of start and end  of route.
+```json
+[
+    ["start_of_edge_1", "end_of_edge_1", "weight_1"],
+    ["start_of_edge_2", "end_of_edge_2", "weight_2"],
+    //...
+    ["start_of_edge_n-1", "end_of_edge_n-1", "weight_n-1"],
+    ["start_of_edge_n", "end_of_edge_n", "weight_n"],
+    ["start", "destination"]
+]
+```
 
-Example input file can be found in [this JSON file](examples/algo.json).
+All values should be numbers. Example input file can be found in [this JSON file](examples/algo.json).
 
 ## Output
 

@@ -8,7 +8,7 @@ if len(sys.argv) == 1:
 
 filename = sys.argv[1]
 f = open(filename)
-vertices, edges, ends = json.loads(f.read())
+edges = json.loads(f.read())
 
-distance, predecessor = BellmanFord(vertices, edges, ends[0])
+distance, predecessor = BellmanFord(edges)
 print(f"Total minimal cost of route from {ends[0]} to {ends[1]} equals to {distance[ends[1]]}")

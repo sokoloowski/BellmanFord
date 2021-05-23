@@ -2,7 +2,7 @@ from math import inf
 from typing import Tuple
 
 
-def BellmanFord(vertices: list, edges: list, source: int) -> Tuple[list, list]:
+def BellmanFord(edges: list) -> Tuple[list, list]:
 
     """
     This implementation takes in a graph, represented as
@@ -14,22 +14,33 @@ def BellmanFord(vertices: list, edges: list, source: int) -> Tuple[list, list]:
     """
 
     # Step 1: initialize graph
-    distance = [
-        inf for n in vertices
-    ]  # Initialize the distance to all vertices to infinity
-    predecessor = [None for n in vertices]  # And having a null predecessor
+    vertices = [edge[0] for edge in edges if len(edge) == 3]
+    [vertices.append(edge[1]) for edge in edges if len(edge) == 3]
+    vertices = list(dict.fromkeys(vertices))  # remove duplicates
+    distance = [inf for n in vertices]
+    predecessor = [None for n in vertices]
+    source, destination = [edge for edge in edges if len(edge) == 2][0]
 
     distance[source] = 0  # The distance from the source to itself is, of course, zero
 
     # Step 2: relax edges repeatedly
-    for v in vertices:
-        for u, v, w in edges:
-            if distance[u] + w < distance[v]:
-                distance[v] = distance[u] + w
-                predecessor[v] = u
+    for vertex in vertices:
+        try:
+            for u, v, w in edges[:-1]:
+                if distance[u] + w < distance[v]:
+                    distance[v] = distance[u] + w
+                    predecessor[v] = u
+        except IndexError:
+            print("Incorrect input format!")
 
     # Step 3: check for negative-weight cycles
-    for u, v, w in edges:
-        assert distance[u] + w >= distance[v], "Graph contains a negative-weight cycle"
+    for vertex in vertices:
+        try:
+            for u, v, w in edges[:-1]:
+                assert (
+                    distance[u] + w >= distance[v]
+                ), "Graph contains a negative-weight cycle"
+        except IndexError:
+            print("Incorrect input format!")
 
     return (distance, predecessor)
