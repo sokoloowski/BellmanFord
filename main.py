@@ -10,5 +10,5 @@ filename = sys.argv[1]
 f = open(filename)
 edges = json.loads(f.read())
 
-distance, predecessor = BellmanFord(edges)
-print(f"Total minimal cost of route from {ends[0]} to {ends[1]} equals to {distance[ends[1]]}")
+distance = BellmanFord(edges)
+print(f"Total minimal cost of route from {edges[-1][0]} to {edges[-1][1]} equals to {distance}")

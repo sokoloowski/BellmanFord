@@ -1,8 +1,7 @@
 from math import inf
-from typing import Tuple
 
 
-def BellmanFord(edges: list) -> Tuple[list, list]:
+def BellmanFord(edges: list) -> int:
 
     """
     This implementation takes in a graph, represented as
@@ -43,4 +42,4 @@ def BellmanFord(edges: list) -> Tuple[list, list]:
         except IndexError:
             print("Incorrect input format!")
 
-    return (distance, predecessor)
+    return distance[destination]
