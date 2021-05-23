@@ -8,7 +8,7 @@ def BellmanFord(edges: list) -> Tuple[list, list]:
     This implementation takes in a graph, represented as
     lists of vertices (represented as integers [0...n-1]) and edges,
     and fills two arrays (distance and predecessor) holding
-    the shortest path from the source to each vertex
+    the shortest path from the start to each vertex
 
     Returns `Tuple` with `distance: list` and `predecessor: list`
     """
@@ -19,9 +19,9 @@ def BellmanFord(edges: list) -> Tuple[list, list]:
     vertices = list(dict.fromkeys(vertices))  # remove duplicates
     distance = [inf for n in vertices]
     predecessor = [None for n in vertices]
-    source, destination = [edge for edge in edges if len(edge) == 2][0]
+    start, destination = [edge for edge in edges if len(edge) == 2][0]
 
-    distance[source] = 0  # The distance from the source to itself is, of course, zero
+    distance[start] = 0  # The distance from the start to itself is, of course, zero
 
     # Step 2: relax edges repeatedly
     for vertex in vertices:
