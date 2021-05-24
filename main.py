@@ -1,3 +1,4 @@
+from algo.AlgorithmExceptions import AlgorithmException, DataFormatException, InputDataException
 import sys
 import json
 from algo.BellmanFord import BellmanFord
@@ -13,9 +14,11 @@ edges = json.loads(f.read())
 try:
     distance = BellmanFord(edges)
     print(f"Total minimal cost of route from {edges[-1][0]} to {edges[-1][1]} equals to {distance}")
-except AssertionError:
+except InputDataException:
     print("Incorrect input data! Cannot execute algorithm!")
-except IndexError:
+except DataFormatException:
     print("Incorrect input data format!")
+except AlgorithmException:
+    print("An error occurred while the algorithm was running")
 finally:
     sys.exit()
