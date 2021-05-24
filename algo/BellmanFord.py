@@ -14,12 +14,12 @@ def BellmanFord(edges: list) -> int:
     """
 
     # Step 1: initialize graph
-    vertices = [edge[0] for edge in edges if len(edge) == 3]
-    [vertices.append(edge[1]) for edge in edges if len(edge) == 3]
+    vertices = [u for u, v, w in edges[:-1]]
+    [vertices.append(v) for u, v, w in edges[:-1]]
     vertices = list(dict.fromkeys(vertices))  # remove duplicates
     distance = [inf for n in vertices]
     predecessor = [None for n in vertices]
-    start, destination = [edge for edge in edges if len(edge) == 2][0]
+    start, destination = edges[-1]
 
     distance[start] = 0  # The distance from the start to itself is, of course, zero
 
