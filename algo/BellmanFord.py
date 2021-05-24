@@ -25,24 +25,14 @@ def BellmanFord(edges: list) -> int:
 
     # Step 2: relax edges repeatedly
     for vertex in vertices:
-        try:
-            for u, v, w in edges[:-1]:
-                if distance[u] + w < distance[v]:
-                    distance[v] = distance[u] + w
-                    predecessor[v] = u
-        except IndexError:
-            print("Incorrect input format!")
-            sys.exit()
+        for u, v, w in edges[:-1]:
+            if distance[u] + w < distance[v]:
+                distance[v] = distance[u] + w
+                predecessor[v] = u
 
     # Step 3: check for negative-weight cycles
     for vertex in vertices:
-        try:
-            for u, v, w in edges[:-1]:
-                assert (
-                    distance[u] + w >= distance[v]
-                ), "Graph contains a negative-weight cycle"
-        except IndexError:
-            print("Incorrect input format!")
-            sys.exit()
+        for u, v, w in edges[:-1]:
+            assert distance[u] + w >= distance[v], "Graph contains a negative-weight cycle"
 
     return distance[destination]
