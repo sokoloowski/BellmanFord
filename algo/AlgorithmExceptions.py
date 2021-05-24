@@ -15,3 +15,10 @@ class DataFormatException(AlgorithmException):
     Exception raised for errors in data format.
     """
     pass
+
+class MissingRouteException(AlgorithmException):
+    """
+    Exception raised for infinite cost of route
+    (no route to destination is available)
+    """
+    pass

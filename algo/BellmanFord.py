@@ -1,5 +1,5 @@
 from math import inf
-from .AlgorithmExceptions import AlgorithmException, InputDataException, DataFormatException
+from .AlgorithmExceptions import AlgorithmException, InputDataException, DataFormatException, MissingRouteException
 
 
 def BellmanFord(edges: list) -> int:
@@ -41,5 +41,8 @@ def BellmanFord(edges: list) -> int:
         for u, v, w in edges[:-1]:
             if distance[u] + w < distance[v]:
                 raise InputDataException
+
+    if distance[destination] == inf:
+        raise MissingRouteException
 
     return distance[destination]
