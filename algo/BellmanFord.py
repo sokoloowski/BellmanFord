@@ -1,4 +1,5 @@
 from math import inf
+import sys
 
 
 def BellmanFord(edges: list) -> int:
@@ -31,6 +32,7 @@ def BellmanFord(edges: list) -> int:
                     predecessor[v] = u
         except IndexError:
             print("Incorrect input format!")
+            sys.exit()
 
     # Step 3: check for negative-weight cycles
     for vertex in vertices:
@@ -41,5 +43,6 @@ def BellmanFord(edges: list) -> int:
                 ), "Graph contains a negative-weight cycle"
         except IndexError:
             print("Incorrect input format!")
+            sys.exit()
 
     return distance[destination]
