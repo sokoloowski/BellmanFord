@@ -5,12 +5,9 @@ import sys
 def BellmanFord(edges: list) -> int:
 
     """
-    This implementation takes in a graph, represented as
-    lists of vertices (represented as integers [0...n-1]) and edges,
-    and fills two arrays (distance and predecessor) holding
-    the shortest path from the start to each vertex
+    This implementation takes in a graph, represented as lists of edges
 
-    Returns `Tuple` with `distance: list` and `predecessor: list`
+    Returns `int` total cost of route
     """
 
     # Step 1: initialize graph
