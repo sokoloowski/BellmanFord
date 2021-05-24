@@ -13,7 +13,7 @@ Script reads data from path specified as command line argument. Any text file wi
 [
     ["start_of_edge_1", "end_of_edge_1", "weight_1"],
     ["start_of_edge_2", "end_of_edge_2", "weight_2"],
-    //...
+    ["start_of_edge_...", "end_of_edge_...", "weight_..."],
     ["start_of_edge_n-1", "end_of_edge_n-1", "weight_n-1"],
     ["start_of_edge_n", "end_of_edge_n", "weight_n"],
     ["start", "destination"]
