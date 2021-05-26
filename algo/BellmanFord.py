@@ -1,8 +1,9 @@
 from math import inf
+from typing import List
 from .AlgorithmExceptions import AlgorithmException, InputDataException, DataFormatException, MissingRouteException
 
 
-def BellmanFord(edges: list) -> int:
+def BellmanFord(edges: list) -> List[int]:
 
     """
     This implementation takes in a graph, represented as lists of edges
@@ -20,11 +21,14 @@ def BellmanFord(edges: list) -> int:
     distance = [inf for n in vertices]
     predecessor = [None for n in vertices]
     try:
-        start, destination = edges[-1]
+        start = edges[-1][0]
     except ValueError:
         raise DataFormatException
 
-    distance[start] = 0  # The distance from the start to itself is, of course, zero
+    try:
+        distance[start] = 0  # The distance from the start to itself is, of course, zero
+    except TypeError:
+        raise DataFormatException
 
     # Step 2: relax edges repeatedly
     for vertex in vertices:
@@ -42,7 +46,4 @@ def BellmanFord(edges: list) -> int:
             if distance[u] + w < distance[v]:
                 raise InputDataException
 
-    if distance[destination] == inf:
-        raise MissingRouteException
-
-    return distance[destination]
+    return distance
