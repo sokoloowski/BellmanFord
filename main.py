@@ -1,3 +1,4 @@
+from json.decoder import JSONDecodeError
 from algo.AlgorithmExceptions import AlgorithmException, DataFormatException, InputDataException, MissingRouteException
 import sys
 import json
@@ -8,8 +9,17 @@ if len(sys.argv) == 1:
     sys.exit()
 
 filename = sys.argv[1]
-f = open(filename)
-edges = json.loads(f.read())
+try:
+    f = open(filename)
+except FileNotFoundError:
+    print(f"File {filename} not found!")
+    sys.exit()
+
+try:
+    edges = json.loads(f.read())
+except JSONDecodeError:
+    print(f"Invalid format in JSON file: {filename}")
+    sys.exit()
 
 try:
     distance = BellmanFord(edges)
