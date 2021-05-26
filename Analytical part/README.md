@@ -67,6 +67,12 @@ Podaj liczbę chromatyczną oraz indeks chromatyczny dla grafu.
 
 Wyznacz minimalne drzewo rozpinające dla analizowanego grafu.
 
+![mst_1](images/mst_1.png)
+
+![mst_2](images/mst_2.png)
+
+Minimalne drzewo rozpinające zadanego grafu ma wagę 10.
+
 ## Zadanie 8 (2pkt)
 
 Czy rysunek tego grafu jest planarny? Jeśli nie, to czy da się go przedstawić jako planarny?
