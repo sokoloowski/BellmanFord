@@ -28,7 +28,7 @@ Opisz graf w formie macierzy incydencji.
 
 Czy ten graf jest hamiltonowski/pół-hamiltonowski? Jeśli tak to podaj ścieżkę/cykl Hamiltona.
 
-Zadany graf jest grafem hamiltonowskim. Cykl Hamiltona: `0 1 2 3 4 5 7 9 10 8 6 0`
+Zadany graf jest grafem hamiltonowskim. Cykl Hamiltona: `0 1 2 3 4 5 7 9 10 8 6 0`.
 
 ![hamilton_cycle](images/hamilton_cycle_1.png)
 
@@ -42,7 +42,7 @@ Czy ten graf jest eulerowski/pół-eulerowski? Jeśli tak, podaj ścieżkę/cykl
 >
 > Aby istniała ścieżka Eulera, każdy wierzchołek grafu za wyjątkiem dwóch musi posiadać stopień parzysty.
 
-W zadanym grafie sześć wierzchołków posiada stopień nieparzysty, co wyklucza istnienie zarówno ścieżki, jak i cyklu Eulera. Zatem graf nie jest eulerowski ani pół-eulerowski
+W zadanym grafie sześć wierzchołków posiada stopień nieparzysty, co wyklucza istnienie zarówno ścieżki, jak i cyklu Eulera. Zatem graf nie jest eulerowski ani pół-eulerowski.
 
 ## Zadanie 5 (2pkt)
 
@@ -82,7 +82,7 @@ Jeśli tak, to ile ścian można w nim wyznaczyć? Proszę to wykazać na rysunk
 
 > Graf skończony jest planarny wtedy i tylko wtedy, gdy nie zawiera podgrafu homeomorficznego z grafem K<sub>5</sub> ani z grafem K<sub>3,3</sub>.
 
-Zadany podgraf zawiera podgraf homeomorficzny z grafem grafem K<sub>5</sub>, zatem nie jest grafem planarnym (nie da się go przedstawić na rysunku jako planarny)
+Zadany podgraf zawiera podgraf homeomorficzny z grafem grafem K<sub>5</sub>, zatem nie jest grafem planarnym (nie da się go przedstawić na rysunku jako planarny):
 
 ![non_planar_1](images/non_planar_1.png)
 
@@ -92,4 +92,4 @@ Zadany podgraf zawiera podgraf homeomorficzny z grafem grafem K<sub>5</sub>, zat
 
 ---
 
-Wszystkie ilustracje grafów zostały wygenerowane za pomocą skryptu [GraphDraw](https://github.com/sokoloowski/GraphDraw)
+Wszystkie ilustracje grafów zostały wygenerowane za pomocą skryptu [GraphDraw](https://github.com/sokoloowski/GraphDraw).
