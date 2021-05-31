@@ -23,12 +23,12 @@ except JSONDecodeError:
     sys.exit()
 
 try:
-    distance = BellmanFord(edges)
+    distance, predecessor = BellmanFord(edges)
     for i, cost in enumerate(distance):
         if isinf(cost):
-            print(f"\033[41mNo route to {i} vertex\033[0m")
+            print(f"\033[31mNo route to {i} vertex\033[0m")
         else:
-            print(f"Minimal distance to {i} vertex: {cost}")
+            print(f"Minimal distance to \033[32m{i}\033[0m vertex: \033[32m{cost}\033[0m,\tpredecessor: \033[32m{predecessor[i]}\033[0m")
 except InputDataException:
     print("Incorrect input data! Cannot execute algorithm!")
 except DataFormatException:

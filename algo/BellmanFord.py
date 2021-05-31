@@ -1,14 +1,14 @@
 from math import inf
-from typing import List
+from typing import Tuple, List
 from .AlgorithmExceptions import AlgorithmException, InputDataException, DataFormatException, MissingRouteException
 
 
-def BellmanFord(edges: list) -> List[int]:
+def BellmanFord(edges: list) -> Tuple[List[int], List[int]]:
 
     """
     This implementation takes in a graph, represented as lists of edges
 
-    Returns `int` total cost of route
+    Returns `Tuple` cost of route and predecessor for each node
     """
 
     # Step 1: initialize graph
@@ -46,4 +46,4 @@ def BellmanFord(edges: list) -> List[int]:
             if distance[u] + w < distance[v]:
                 raise InputDataException
 
-    return distance
+    return (distance, predecessor)

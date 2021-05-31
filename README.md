@@ -32,9 +32,9 @@ If an error occurs, information about the cause is displayed.
 
 ```
 PS D:\BellmanFord> python .\main.py .\examples\algo.json
-Minimal distance to 0 vertex: 0
-Minimal distance to 1 vertex: 1
-Minimal distance to 2 vertex: 2
-Minimal distance to 3 vertex: 4
-Minimal distance to 4 vertex: 3
+Minimal distance to 0 vertex: 0,        predecessor: None
+Minimal distance to 1 vertex: 1,        predecessor: 0
+Minimal distance to 2 vertex: 2,        predecessor: 1
+Minimal distance to 3 vertex: 4,        predecessor: 4
+Minimal distance to 4 vertex: 3,        predecessor: 2
 ```
